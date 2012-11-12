@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F2810BB16515CFA00E0DEFD /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F2810BA16515CFA00E0DEFD /* FacebookSDK.framework */; };
 		D20EFFFC16150D0800614CD0 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D20EFFFB16150D0800614CD0 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D20EFFFE16150D1300614CD0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D20EFFFD16150D1300614CD0 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D2C3C0F416218BCD00CD553A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2C3C0F216218BBF00CD553A /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -14,7 +15,6 @@
 		D2C3C1081621927300CD553A /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C3C1041621927300CD553A /* Icon-72.png */; };
 		D2C3C1091621927300CD553A /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C3C1051621927300CD553A /* Icon-114.png */; };
 		D2C3C10A1621927300CD553A /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C3C1061621927300CD553A /* Icon-144.png */; };
-		E7469CB416075B4A004FB52A /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7469CB316075B4A004FB52A /* FacebookSDK.framework */; };
 		E77E53D515FE483600C6018A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77E53D415FE483600C6018A /* UIKit.framework */; };
 		E77E53D715FE483600C6018A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77E53D615FE483600C6018A /* Foundation.framework */; };
 		E77E53D915FE483600C6018A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77E53D815FE483600C6018A /* CoreGraphics.framework */; };
@@ -59,6 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F2810BA16515CFA00E0DEFD /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		D20EFFFB16150D0800614CD0 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		D20EFFFD16150D1300614CD0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		D2C3C0F216218BBF00CD553A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -66,7 +67,6 @@
 		D2C3C1041621927300CD553A /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Icon/Icon-72.png"; sourceTree = "<group>"; };
 		D2C3C1051621927300CD553A /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-114.png"; path = "Icon/Icon-114.png"; sourceTree = "<group>"; };
 		D2C3C1061621927300CD553A /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-144.png"; path = "Icon/Icon-144.png"; sourceTree = "<group>"; };
-		E7469CB316075B4A004FB52A /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = SOURCE_ROOT; };
 		E77E53D015FE483600C6018A /* FacebookSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77E53D415FE483600C6018A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E77E53D615FE483600C6018A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -134,7 +134,7 @@
 				E77E53D515FE483600C6018A /* UIKit.framework in Frameworks */,
 				E77E53D715FE483600C6018A /* Foundation.framework in Frameworks */,
 				E77E53D915FE483600C6018A /* CoreGraphics.framework in Frameworks */,
-				E7469CB416075B4A004FB52A /* FacebookSDK.framework in Frameworks */,
+				0F2810BB16515CFA00E0DEFD /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,7 +175,7 @@
 				D2C3C0F216218BBF00CD553A /* Social.framework */,
 				D20EFFFD16150D1300614CD0 /* Accounts.framework */,
 				D20EFFFB16150D0800614CD0 /* AdSupport.framework */,
-				E7469CB316075B4A004FB52A /* FacebookSDK.framework */,
+				0F2810BA16515CFA00E0DEFD /* FacebookSDK.framework */,
 				E77E544115FE496B00C6018A /* QuartzCore.framework */,
 				E77E53D415FE483600C6018A /* UIKit.framework */,
 				E77E53D615FE483600C6018A /* Foundation.framework */,
@@ -453,6 +453,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../../../Documents/FacebookSDK\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FacebookSample/FacebookSample-Prefix.pch";
@@ -472,6 +473,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../../../Documents/FacebookSDK\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FacebookSample/FacebookSample-Prefix.pch";
