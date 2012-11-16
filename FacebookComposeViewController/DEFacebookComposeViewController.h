@@ -89,6 +89,8 @@ typedef void (^DEFacebookComposeViewControllerCompletionHandler)(DEFacebookCompo
     // been presented to the user.
 - (BOOL)addURL:(NSString *)url;
 
+- (NSString*)getTextFromTextView;
+
 //    // Removes all URLs from the tweet. Returns NO and does not perform an operation
 //    // if the sheet has already been presented to the user.
 //- (BOOL)removeAllURLs;
