@@ -31,7 +31,7 @@
 #import "UIDevice+DEFacebookComposeViewController.h"
 #import <QuartzCore/QuartzCore.h>
 //#import <FacebookSDK/FacebookSDK.h>
-#import "FacebookManager.h"
+//#import "FacebookManager.h"
 
 #import <Social/Social.h>
 
@@ -561,11 +561,11 @@ enum {
     
     self.gradientView.frame = self.gradientView.superview.bounds;
     
-    [FBSession openActiveSessionWithAllowLoginUI:NO];
-    
-    if (![FBSession.activeSession isOpen]) {
-        [self.sendButton setTitle:@"Log in" forState:UIControlStateNormal];
-    }
+//    [FBSession openActiveSessionWithAllowLoginUI:NO];
+//    
+//    if (![FBSession.activeSession isOpen]) {
+//        [self.sendButton setTitle:@"Log in" forState:UIControlStateNormal];
+//    }
     [self.navImage setNeedsDisplay];
 }
 
