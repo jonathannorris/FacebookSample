@@ -47,7 +47,7 @@ static BOOL waitingForAccess = NO;
 @property (nonatomic, retain) NSArray *attachmentImageViews;
 @property (nonatomic) UIStatusBarStyle previousStatusBarStyle;
 @property (nonatomic, assign) UIViewController *fromViewController;
-@property (nonatomic, retain) UIImageView *backgroundImageView;
+//@property (nonatomic, retain) UIImageView *backgroundImageView;
 @property (nonatomic, retain) DEFacebookGradientView *gradientView;
 @property (nonatomic, retain) UIPickerView *accountPickerView;
 @property (nonatomic, retain) UIPopoverController *accountPickerPopoverController;
@@ -92,7 +92,7 @@ static BOOL waitingForAccess = NO;
 @synthesize attachmentImageViews = _attachmentImageViews;
 @synthesize previousStatusBarStyle = _previousStatusBarStyle;
 @synthesize fromViewController = _fromViewController;
-@synthesize backgroundImageView = _backgroundImageView;
+//@synthesize backgroundImageView = _backgroundImageView;
 @synthesize gradientView = _gradientView;
 @synthesize accountPickerView = _accountPickerView;
 @synthesize accountPickerPopoverController = _accountPickerPopoverController;
@@ -182,7 +182,7 @@ enum {
     [_urls release], _urls = nil;
     [_attachmentFrameViews release], _attachmentFrameViews = nil;
     [_attachmentImageViews release], _attachmentImageViews = nil;
-    [_backgroundImageView release], _backgroundImageView = nil;
+//    [_backgroundImageView release], _backgroundImageView = nil;
     [_gradientView release], _gradientView = nil;
     [_accountPickerView release], _accountPickerView = nil;
     [_accountPickerPopoverController release], _accountPickerPopoverController = nil;
@@ -259,7 +259,7 @@ enum {
     [super viewWillAppear:animated];
 
     
-        // Now let's fade in a gradient view over the presenting view.
+    // Now let's fade in a gradient view over the presenting view.
     self.gradientView = [[[DEFacebookGradientView alloc] initWithFrame:[UIApplication sharedApplication].keyWindow.bounds] autorelease];
     self.gradientView.autoresizingMask = UIViewAutoresizingNone;
     self.gradientView.transform = self.fromViewController.view.transform;
@@ -267,25 +267,25 @@ enum {
     self.gradientView.center = [UIApplication sharedApplication].keyWindow.center;
     [self.fromViewController.view addSubview:self.gradientView];
     [UIView animateWithDuration:0.3f
-                     animations:^ {
-                         self.gradientView.alpha = 1.0f;
-                     }];    
+     animations:^ {
+         self.gradientView.alpha = 0.5f;
+     }];    
     
     self.previousStatusBarStyle = [UIApplication sharedApplication].statusBarStyle;
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES]; 
     
     [self updateFramesForOrientation:self.interfaceOrientation];
-    
 }
 
 
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    self.backgroundImageView.alpha = 1.0f;
-    //self.backgroundImageView.frame = [self.view convertRect:self.backgroundImageView.frame fromView:[UIApplication sharedApplication].keyWindow];
-    [self.view insertSubview:self.gradientView aboveSubview:self.backgroundImageView];
+//    self.backgroundImageView.alpha = 1.0f;
+//    //self.backgroundImageView.frame = [self.view convertRect:self.backgroundImageView.frame fromView:[UIApplication sharedApplication].keyWindow];
+//    [self.view insertSubview:self.gradientView aboveSubview:self.backgroundImageView];
+    [self.view addSubview:_gradientView];
+    [self.view sendSubviewToBack:_gradientView];
     
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     UIBezierPath *roundedPath = [UIBezierPath bezierPathWithRoundedRect:self.navImage.bounds
@@ -299,24 +299,22 @@ enum {
     [self.navImage setNeedsDisplay];
 }
 
-
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
     UIView *presentingView = [UIDevice de_isIOS5] ? self.fromViewController.view : self.parentViewController.view;
     [presentingView addSubview:self.gradientView];
     
-    [self.backgroundImageView removeFromSuperview];
-    self.backgroundImageView = nil;
+//    [self.backgroundImageView removeFromSuperview];
+//    self.backgroundImageView = nil;
     
     [UIView animateWithDuration:0.3f
-                     animations:^ {
-                         self.gradientView.alpha = 0.0f;
-                     }
-                     completion:^(BOOL finished) {
-                         [self.gradientView removeFromSuperview];
-                     }];
+     animations:^ {
+         self.gradientView.alpha = 0.0f;
+     }
+     completion:^(BOOL finished) {
+         [self.gradientView removeFromSuperview];
+     }];
     
     [[UIApplication sharedApplication] setStatusBarStyle:self.previousStatusBarStyle animated:YES];
 }
@@ -340,13 +338,13 @@ enum {
 {
     [self updateFramesForOrientation:interfaceOrientation];
 
-    // Our fake background won't rotate properly. Just hide it.
-    if (interfaceOrientation == self.presentedViewController.interfaceOrientation) {
-        self.backgroundImageView.alpha = 1.0f;
-    }
-    else {
-        self.backgroundImageView.alpha = 0.0f;
-    }
+//    // Our fake background won't rotate properly. Just hide it.
+//    if (interfaceOrientation == self.presentedViewController.interfaceOrientation) {
+//        self.backgroundImageView.alpha = 1.0f;
+//    }
+//    else {
+//        self.backgroundImageView.alpha = 0.0f;
+//    }
 }
 
 
